@@ -5,7 +5,8 @@
 // import ArrowFunctionalComponentWithPropsType from "./components/ArrowFunctionalComponentWithPropsType.tsx";
 
 import Layout from "./components/Layout.tsx";
-import FunctionalComponentWithState from "./components/FunctionalComponentWithState.tsx";
+// import FunctionalComponentWithState from "./components/FunctionalComponentWithState.tsx";
+import Counter from "./components/Counter.tsx";
 // import ClassComponentWithState from "./components/ClassComponentWithState.tsx";
 
 function App() {
@@ -26,8 +27,10 @@ function App() {
     {/*    <h1 className="text-center text-2xl font-bold">This is a heading1 title</h1>*/}
     {/*    <FunctionalComponent/>*/}
     {/*    <ClassComponentWithState/>*/}
-        <FunctionalComponentWithState/>
+    {/*    <FunctionalComponentWithState/>*/}
+          <Counter/>
       </Layout>
+
     </>
   )
 }
