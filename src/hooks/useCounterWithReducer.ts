@@ -1,6 +1,6 @@
-import {useReducer} from "react";
+import { useReducer } from 'react';
 
-type CounterState = {
+type CounterState ={
   count: number;
   lastAction: string;
   time: string;
@@ -17,41 +17,33 @@ const initialState: CounterState = {
   time: "",
 }
 
-const getCurrentTime = () => new Date().toLocaleDateString();
+const getCurrentTime = () => new Date().toLocaleTimeString();
 
-function reducer(state: CounterState, action: Action ): CounterState {
-  switch (action.type) {
-    case "INCREASE":
-      return {
-        count: state.count + 1,
-        lastAction: "Increase",
-        time: getCurrentTime(),
-      };
-
-      case "DECREASE":
-        return state.count > 0
-          ? {
-            count: state.count - 1,
-            lastAction: "Decrease",
-            time: state.time,
-          }
-          : state;
-
-        // return {
-        //   count: state.count - 1,
-        //   lastAction: "Decrease",
-        //   time: getCurrentTime(),
-        // };
-
-        case "RESET":
-          return {
-            count: 0,
-            lastAction: "Reset",
-            time: getCurrentTime(),
-          };
-          default:
-            return state;
-  }
+function reducer(state:CounterState, action:Action): CounterState {
+ switch (action.type) {
+   case "INCREASE":
+     return {
+       count: state.count + 1,
+       lastAction: "Increase",
+       time: getCurrentTime(),
+     };
+   case "DECREASE":
+     return state.count > 0
+      ? {
+         count: state.count - 1,
+         lastAction: "Decrease",
+         time: getCurrentTime(),
+       }
+       : state;
+   case "RESET":
+     return {
+       count: 0,
+       lastAction: "Reset",
+       time: getCurrentTime(),
+     };
+   default:
+     return state;
+ }
 }
 
 export const useCounterWithReducer = () => {
@@ -62,7 +54,7 @@ export const useCounterWithReducer = () => {
   const decrease = () => dispatch({type: "DECREASE"});
   const reset = () => dispatch({type: "RESET"});
 
-  return{
+  return {
     count: state.count,
     lastAction: state.lastAction,
     time: state.time,
@@ -70,5 +62,6 @@ export const useCounterWithReducer = () => {
     decrease,
     reset,
   };
+};
 
-}
+

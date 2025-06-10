@@ -3,46 +3,75 @@
 // import ArrowFunctionalComponent from "./components/ArrowFunctionalComponent.tsx";
 // import ArrowFunctionalComponentWithProps from "./components/ArrowFunctionalComponentWithProps.tsx";
 // import ArrowFunctionalComponentWithPropsType from "./components/ArrowFunctionalComponentWithPropsType.tsx";
-
 import Layout from "./components/Layout.tsx";
-import Todo from "./components/Todo/Todo.tsx";
-// import CounterWithReducer from "./components/CounterWithReducer.tsx";
+// import ClassComponentWithState from "./components/ClassComponentWithState.tsx";
 // import FunctionalComponentWithState from "./components/FunctionalComponentWithState.tsx";
 // import Counter from "./components/Counter.tsx";
-// import CounterWIthMoreStates from "./components/CounterWIthMoreStates.tsx";
 // import NameChanger from "./components/NameChanger.tsx";
-// import ClassComponentWithState from "./components/ClassComponentWithState.tsx";
-// import CounterAdvanced from "./components/CounterAdvanced.tsx";
+// import { useEffect } from "react";
+// import CounterWithMoreStates from "./components/CounterWithMoreStates.tsx";
 // import CounterWithCustomHook from "./components/CounterWithCustomHook.tsx";
-// import CounterAdvancedWithCustomHook from "./components/CounterAdvancedWithCustomHook.tsx";
+// import CounterAdvanced from "./components/CounterAdvanced.tsx";
+// import CounterAdvancedWithCustomHook from "./components/CounterAdvancedWithCustomHook";
+// import CounterWithReducer from "./components/CounterWithReducer.tsx";
+// import Todo from "./components/Todo/Todo.tsx";
+// import OnlineStatus from "./components/OnlineStatus.tsx";
+import {BrowserRouter, Routes, Route} from "react-router";
+import HomePage from "./pages/HomePage.tsx";
+import NameChangerPage from "./pages/NameChangerPage.tsx";
+import OnlineStatusPage from "./pages/OnlineStatusPage.tsx";
+import UserPage from "./pages/UserPage.tsx";
+
 function App() {
+
+  // useEffect(() => {
+  //   const id: number = setInterval(() => console.log("tick"), 1000);
+  //   return () => clearInterval(id);
+  // }, []);
 
   return (
     <>
-      <Layout>
-    {/*<ClassComponent/>*/}
-    {/*    <FunctionalComponent/>*/}
-    {/*    <ArrowFunctionalComponent/>*/}
-    {/*    <ArrowFunctionalComponentWithProps title="Is Arrow Functional Component with Props!"/>*/}
-    {/*    <ArrowFunctionalComponentWithPropsType*/}
-    {/*        title="Is Arrow Functional Component with Props!"*/}
-    {/*        description="this is a description"*/}
-    {/*    />*/}
+      {/*<Layout>*/}
+        {/*<ClassComponent/>*/}
+        {/*<FunctionalComponent/>*/}
+        {/*<ArrowFunctionalComponent/>*/}
+        {/*<ArrowFunctionalComponentWithProps title="Is a Arrow Functional Component with Props!"/>*/}
+        {/*<ArrowFunctionalComponentWithPropsType*/}
+        {/*  title="Is a Arrow Functional Component with Props!"*/}
+        {/*  description="this is a description"*/}
+        {/*/>*/}
 
+        {/*<ClassComponentWithState/>*/}
+        {/*<FunctionalComponentWithState/>*/}
+        {/*<Counter/>*/}
+        {/*<NameChanger/>*/}
+        {/*<CounterWithMoreStates/>*/}
+        {/*<CounterAdvanced/>*/}
+        {/*<CounterWithCustomHook/>*/}
+        {/*<CounterAdvancedWithCustomHook/>*/}
 
-    {/*    <h1 className="text-center text-2xl font-bold">This is a heading1 title</h1>*/}
-    {/*    <FunctionalComponent/>*/}
-    {/*    <ClassComponentWithState/>*/}
-    {/*    <FunctionalComponentWithState/>*/}
-    {/*      <Counter/>*/}
-    {/*      <NameChanger/>*/}
-    {/*    <CounterWIthMoreStates/>*/}
-    {/*    <CounterAdvanced/>*/}
-    {/*    <CounterWithCustomHook/>*/}
-    {/*    <CounterAdvancedWithCustomHook/>*/}
-    {/*    <CounterWithReducer/>*/}
-        <Todo/>
-      </Layout>
+        {/*<CounterWithReducer/>*/}
+        {/*<Todo/>*/}
+
+        {/*<OnlineStatus/>*/}
+
+      {/*</Layout>*/}
+
+      <BrowserRouter>
+        <Layout>
+          <Routes>
+            {/*<Route path="/" element={<HomePage />}/>*/}
+            <Route index element={<HomePage />}/>
+
+            <Route path="examples">
+              <Route path="name-changer" element={<NameChangerPage/>}/>
+              <Route path="online-status" element={<OnlineStatusPage/>}/>
+            </Route>
+            <Route path="users/:userId" element={<UserPage/>}/>
+
+          </Routes>
+        </Layout>
+      </BrowserRouter>
 
     </>
   )

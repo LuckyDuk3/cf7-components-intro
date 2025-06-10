@@ -1,27 +1,35 @@
-// type Props = {
-//     title: string;
-//     description: string;
-// }
 
-// interface Props {
-//     title: string;
+// type Props = {
+//   title: string;
+//   description: string;
 // }
 
 type A = {
-    title: string;
+  title: string;
 }
-type B = {
-    description: string;
+type B ={
+  description: string;
 }
-type MergedProps = A & B;
+type Props = A & B;
 
-const ArrowFunctionalComponentWithPropsType = ({title,description}: MergedProps) => {
-    return (
-        <>
-        <h1 className="text-center mt-12 text-xl font-bold">{title}</h1>
-            <p className="text-center text-gray-800">{description}</p>
-        </>
-    )
+
+// interface Props {
+//   title: string;
+// }
+//
+// interface Props {
+//   description: string;
+// }
+
+
+const ArrowFunctionalComponentWithPropsType = ({title, description}: Props) => {
+return (
+  <>
+    <h1 className="text-center text-xl font-bold mt-12">{title}</h1>;
+    <p className="text-center text-gray-800">{description}</p>
+  </>
+)
+
 }
 
 export default ArrowFunctionalComponentWithPropsType;

@@ -1,13 +1,9 @@
 type Props = {
-    title: string;
+  title: string;
 }
 
-// interface Props {
-//     title: string;
-// }
-
 const ArrowFunctionalComponentWithProps = ({title}: Props) => {
-    return <h1 className="text-center mt-12 text-xl font-bold">{title}</h1>
+return <h1 className="text-center text-xl font-bold mt-12">{title}</h1>;
 }
 
 export default ArrowFunctionalComponentWithProps;

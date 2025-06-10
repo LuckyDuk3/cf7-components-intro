@@ -1,6 +1,7 @@
-import {useState} from "react";
+import {useState} from 'react';
+// import CounterButton from "./CounterButton.tsx";
 
-type CounterState = {
+type CounterState ={
   count: number;
   lastAction: string;
   time: string;
@@ -9,27 +10,27 @@ type CounterState = {
 export const useAdvancedCounter = () => {
 
   const [state, setState] = useState<CounterState>({
-    count: 0,
+    count:0,
     lastAction: "",
-    time : "",
-  })
+    time: "",
+  });
 
-  const getCurrentTime = () => new Date().toLocaleDateString();
+  const getCurrentTime = () => new Date().toLocaleTimeString();
 
-  const increase = () => {
+  const increase =() => {
     setState({
       count: state.count + 1,
-      lastAction: "Increace",
-      time: getCurrentTime()
+      lastAction: "Increase",
+      time: getCurrentTime(),
     });
   };
 
   const decrease = () => {
-    if (state.count > 0) {
+    if (state.count > 0){
       setState({
         count: state.count - 1,
         lastAction: "Decrease",
-        time: getCurrentTime()
+        time: getCurrentTime(),
       });
     }
   };
@@ -38,10 +39,9 @@ export const useAdvancedCounter = () => {
     setState({
       count: 0,
       lastAction: "Reset",
-      time: getCurrentTime()
-    });
-  };
-
+      time: getCurrentTime(),
+    })
+  }
 
   return {
     count: state.count,
@@ -50,6 +50,5 @@ export const useAdvancedCounter = () => {
     increase,
     decrease,
     reset
-  }
-
+  };
 }

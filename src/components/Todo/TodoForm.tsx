@@ -1,14 +1,15 @@
-import {useState} from "react";
+import { useState } from "react";
 
 type Action =
   | {type: "ADD"; payload: string}
   | {type: "DELETE"; payload: number}
 
-type TodoFormProps = {
-  dispatch: React.Dispatch<Action>,
-}
 
-const TodoForm = ({dispatch}: TodoFormProps ) => {
+type TodoFormProps = {
+  dispatch: React.Dispatch<Action>;
+};
+
+const TodoForm = ({ dispatch }: TodoFormProps) => {
 
   const [text, setText] = useState("");
 
@@ -16,7 +17,7 @@ const TodoForm = ({dispatch}: TodoFormProps ) => {
     setText(e.target.value);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) =>{
     e.preventDefault();
     if (text.trim() !== "") {
       dispatch({type: "ADD", payload: text});
@@ -35,10 +36,9 @@ const TodoForm = ({dispatch}: TodoFormProps ) => {
           value={text}
           onChange={handleChange}
           className="flex-1 border p-2 rounded"
-          placeholder="New Task.."
+          placeholder="New task.."
         />
         <button
-
           type="submit"
           className="bg-cf-dark-gray text-white px-4 py-2 rounded"
         >
@@ -47,6 +47,6 @@ const TodoForm = ({dispatch}: TodoFormProps ) => {
       </form>
     </>
   )
-}
+};
 
 export default TodoForm;
