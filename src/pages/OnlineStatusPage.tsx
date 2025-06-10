@@ -1,11 +1,11 @@
-import {useEffect} from "react";
-import OnlineStatus from "../components/OnlineStatus.tsx";
+import {useEffect} from 'react';
+import OnlineStatus from "../components/OnlineStatus.tsx"
 
 const OnlineStatusPage = () => {
 
-  useEffect(() => {
+  useEffect(()=>{
     document.title = "CF7 Online Status"
-  })
+  }, [])
 
   return (
     <>

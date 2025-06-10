@@ -1,14 +1,14 @@
 import {useEffect} from "react";
 import {useParams} from "react-router";
 
-const UserPage = () => {
-  const {userId} = useParams();
+const UserPage = () =>{
+  const { userId } = useParams();
 
-  useEffect(() => {
-    document.title = `CF7 User id: ${userId}`;
+  useEffect(()=>{
+    document.title = `CF7 User id: ${ userId }`;
   }, [userId]);
 
-  return (
+  return(
     <>
       <h1>user with id: {userId}</h1>
     </>
